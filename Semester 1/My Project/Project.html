@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Project</title>
+  <link rel="stylesheet" href="Project.css">
+</head>
+
+<body>
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <a href="LightMode.html">Nofal</a>
+      </div>
+      <ul>
+        <li><a href="#" class="nav-link" data-section="#home">Home</a></li>
+        <li><a href="#" class="nav-link" data-section="#about">About</a></li>
+        <li><a href="#" class="nav-link" data-section="#portfolio">Portfolio</a></li>
+        <li><a href="#" class="nav-link" data-section="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      var previousScroll = 0;
+      $(window).scroll(function() {
+        var currentScroll = $(this).scrollTop();
+        if (currentScroll > previousScroll) {
+          $('nav').css('top', '-80px');
+        } else {
+          $('nav').css('top', '0');
+        }
+        previousScroll = currentScroll;
+      });
+
+      $('.nav-link').click(function(e) {
+        e.preventDefault();
+        var targetSection = $(this).data('section');
+        $('html, body').animate({
+          scrollTop: $(targetSection).offset().top
+        }, 800);
+      });
+
+      $('#programmingButton').click(function() {
+        $('html, body').animate({
+          scrollTop: $('#skills').offset().top
+        }, 800);
+      });
+
+      $('#hobbiesButton').click(function() {
+        $('html, body').animate({
+          scrollTop: $('#skills').offset().top
+        }, 800);
+      });
+    });
+  </script>
+
+<section id="home">
+<div class="img"></div>
+  <div class="center">
+    <div class="title">A WEBSITE TO SHOWCASE</div>
+    <div class="sub_title">MY PORTFOLIO</div>
+    <div class="btns">
+      <button id="programmingButton">Programming</button>
+      <button id="hobbiesButton">Hobbies</button>
+    </div>
+  </div>
+</section>
+
+  <section id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>
+        Hello, my name is Nofal and I am a freshman studying Computer Science at Bahria University.
+        I am excited to share my portfolio with you today, which showcases my skills, achievements,
+        and projects related to my field of study. Here are some highlights:
+      </p>
+      <br>
+      <h2>Education:</h2>
+      <p>
+        I have completed A level with Mathematics, Physics, and IT Majors.
+        Currently, I am pursuing my Bachelor's degree in Computer Science,
+        where I have excelled in courses such as Computer Programming and ICT,
+        programming subjects happen to be my forte.
+      </p>
+      <br>
+      <section id="skills">
+      <h2>Skills:</h2>
+      <p>
+        I have acquired a strong foundation in programming languages,
+        including HTML, CSS, JavaScript, and C++.
+        Additionally, I possess excellent problem-solving and analytical skills,
+        as well as strong teamwork and communication abilities.
+      </p>
+      </section>
+      <br>
+      <h2>Projects:</h2>
+      <p>
+        I have completed several notable projects during my studies.
+        One of them was developing a C++ project that worked as a management system for a cafe in our University
+        which involved a lot of focus on the visuals, graphics, and functionality.
+      </p>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <div class="container">
+      <h2>Portfolio</h2>
+      <div class="gallery">
+        <tag>
+          <img src="pic2.webp" alt="Picture 2">
+        </tag>
+        <tag2>
+          <img src="pic1.webp" alt="Picture 1">
+        </tag2>
+      </div><br>
+      <p>These are a few pictures of me, my friends and I once stumbled into a construction site at night and took this picture,
+        it holds meaning for me because of how fun and memorable that day was!
+      </p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Information</h2>
+      <p>
+        ---------------------------<br>
+        Email: nofalzia4s@gmail.com<br>
+        Phone: +92 336 5536633<br>
+        ---------------------------
+      </p>
+    </div>
+  </section>
+
+</body>
+
+</html>
